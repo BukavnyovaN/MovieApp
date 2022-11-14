@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 export const Carousel = () => {
   const navigate = useNavigate();
   const [genreValue, setGenreValue] = useState(0);
-  console.log(genreValue);
 
   const genres = [
     {
@@ -97,6 +96,7 @@ export const Carousel = () => {
 
         {genres.map(({ genreId, name, url }) => (
           <div
+            key={genreId}
             className="relative col-span-2 text-white hover:text-yellow-400"
             onClick={() => {
               setGenreValue(genreId);
