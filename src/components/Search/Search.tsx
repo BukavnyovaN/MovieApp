@@ -7,7 +7,7 @@ export const Search = () => {
   const navigate = useNavigate();
   const [params] = useSearchParams();
 
-  const [searchValue, setSearchValue] = useState(params.get("value"));
+  const [searchValue, setSearchValue] = useState(params.get("value") || "");
 
   const onSearch: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setSearchValue(event.target.value);
